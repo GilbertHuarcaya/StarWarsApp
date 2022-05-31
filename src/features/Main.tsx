@@ -3,7 +3,7 @@ import { Route, Routes, Outlet } from "react-router-dom";
 import Search from "../components/layout/Search";
 import People from "../components/people/People";
 import Planets from "../components/planets/Planets";
-import Starships from "../components/starships/Starship";
+import Starships from "../components/starships/Starships";
 import NotFound from "./NotFound";
 
 const Main = () => (
