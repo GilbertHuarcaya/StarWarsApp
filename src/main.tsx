@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { reducers } from "./store/reducers";
 
 import App from "./App";
-import "./index.css";
+import "./styles/main.scss";
 
 const store = configureStore({
   reducer: reducers,

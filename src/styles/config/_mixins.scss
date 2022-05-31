@@ -1,0 +1,125 @@
+@mixin font($size: 14px, $weight: 400, $line-height: 1.5rem) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  line-height: $line-height;
+}
+@mixin flex(
+  $flex-direction: row,
+  $justify-content: normal,
+  $align-items: normal
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+@mixin grid($grid-template-columns: none, $grid-template-rows: none) {
+  display: grid;
+  grid-template-columns: $grid-template-columns;
+  grid-template-rows: $grid-template-rows;
+}
+@mixin position(
+  $position: static,
+  $top: auto,
+  $bottom: auto,
+  $right: auto,
+  $left: auto
+) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+@mixin simple-bar {
+  height: 3rem;
+  box-shadow: $--bottom-thin;
+}
+@mixin container {
+  background-color: #fff;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.5), 0px 2px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+@mixin option {
+  min-height: 2.5rem;
+  padding: 0 2.375rem 0 0.75rem;
+  @include flex($align-items: center);
+  @include font;
+  &:hover,
+  &--active {
+    background-color: rgba(0, 124, 176, 0.1);
+  }
+  &--remove {
+    box-shadow: $--top-thin;
+    color: $--red;
+  }
+}
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+@mixin button {
+  border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  @include font($weight: 600);
+  padding: 0 1rem;
+  @include flex($align-items: center);
+  height: 2.25rem;
+}
+@mixin shadow {
+  box-shadow: inset 0px -1px 0px $--light-gray;
+  align-items: center;
+}
+@mixin profiles-columns {
+  @include grid(30% 18% 7% 28% 17%);
+  @include shadow;
+  padding: 0 1rem;
+}
+@mixin main-bar(
+  $box-shadow: inset 0px -1px 0px $--light-gray,
+  $padding: 0 1rem
+) {
+  box-shadow: $box-shadow;
+  padding: $padding;
+  @include flex($align-items: center);
+}
+@mixin graph-heading {
+  line-height: 1rem;
+  @include flex($justify-content: center, $align-items: center);
+}
+@mixin modal-input($width) {
+  @include position(relative);
+  background-color: $--white-color;
+  width: $width;
+  padding: 0 2.375rem 0 0.5rem;
+  height: 2.25rem;
+  border: 1px solid $--mid-gray;
+  border-radius: 2px;
+  @include flex($justify-content: space-between, $align-items: center);
+  @include font(14px, 400);
+  line-height: 1.5rem;
+  color: black;
+}
+@mixin role {
+  .role {
+    @include flex($justify-content: end, $align-items: center);
+    @include font(14px, 600);
+    line-height: 1.5rem;
+  }
+  &__icon {
+    margin: 0 0.375rem;
+  }
+  &__select {
+    padding: 0 0.25rem 0 0.5rem;
+    background-color: transparent;
+    color: $--dark-gray;
+    @include font(14px, 400);
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5rem;
+    border: none;
+  }
+}

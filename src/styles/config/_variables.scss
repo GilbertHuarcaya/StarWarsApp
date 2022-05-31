@@ -1,0 +1,25 @@
+//font
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+//colors
+$--white-color: #fff;
+$--body-color: #000000;
+$--background-color-hover: #212121;
+$--link-color: #0076a8;
+$--footer-color: #63666a;
+$--mid-gray: #d0d0ce;
+$--dark-gray: #757575;
+$--light-gray: #e0e0e0;
+$--lighter-gray: #f7f7f7;
+$--neutral-black: #c2c2c2;
+$--neutral-black-2: #a3a3a3;
+$--green: #86bc25;
+$--black: #212121;
+$--pearl: #fcf4d5;
+$--kournikova: #ffe67f;
+$--blue: #00a3e0;
+$--light-blue: rgba(160, 220, 255, 0.4);
+$--dark-blue: #007cb0;
+$--red: #da291c;
+//shadows
+$--bottom-thin: inset 0px -1px 0px $--light-gray;
+$--top-thin: inset 0px 1px 0px $--light-gray;
