@@ -12,7 +12,6 @@ const Search = () => {
   const [search, setSearch] = useState<string | null>(null);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(search);
 
     if (search === "people") {
       dispatch(setCurrentTitle(search));
