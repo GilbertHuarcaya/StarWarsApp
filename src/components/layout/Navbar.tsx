@@ -1,16 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Store } from "../../config/interfaces/store/types";
+import { useLocation } from "react-router-dom";
 import Search from "./Search";
-import Title from "./Title";
+import StarWarsLogo from "../../images/Star_Wars_Logo.svg";
 
 const Navbar = () => {
-  const currentTitle = useSelector((store: Store) => store.app.currentTitle);
+  const location = useLocation();
+
   return (
-    <header>
-      <h1>Logo</h1>
-      {currentTitle && <Title title={currentTitle} />}
-      <Search />
+    <header className="header">
+      <img src={StarWarsLogo} alt="star-wars-logo" className="header__logo" />
+      {location.pathname !== "/" && <Search />}
     </header>
   );
 };

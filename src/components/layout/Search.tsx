@@ -33,8 +33,11 @@ const Search = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <select onChange={(e) => setSearch(e.target.value)}>
+    <form onSubmit={handleSubmit} className="search">
+      <select
+        onChange={(e) => setSearch(e.target.value)}
+        className="search__select"
+      >
         <option selected disabled>
           Choose one
         </option>
@@ -42,7 +45,7 @@ const Search = () => {
         <option value="planets">Planets</option>
         <option value="starships">Starships</option>
       </select>
-      <button type="submit">Search</button>
+      <button type="submit" className="search__btn">Search</button>
     </form>
   );
 };
