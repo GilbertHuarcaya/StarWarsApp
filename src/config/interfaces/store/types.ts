@@ -3,8 +3,7 @@ import { Planet } from "../planets/types";
 import { Person } from "../people/types";
 
 interface AppStore {
-  query: string;
-  toggleDisplay: string
+  currentTitle: string;
 }
 
 export interface FetchPeople {

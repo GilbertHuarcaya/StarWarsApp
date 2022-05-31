@@ -18,4 +18,4 @@ export const FETCH_ALL_PEOPLE = "FETCH_ALL_PEOPLE";
 
 // ActionTypes APP
 export const TOGGLE_DISPLAY = "TOGGLE_DISPLAY";
-export const NEW_QUERY = "NEW_QUERY";
+export const NEW_TITLE = "NEW_TITLE";

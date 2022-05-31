@@ -4,8 +4,7 @@ import {
   FETCH_ALL_PLANETS,
   FETCH_ALL_PEOPLE,
   FETCH_ALL_STARSHIPS,
-  TOGGLE_DISPLAY,
-  NEW_QUERY,
+  NEW_TITLE,
 } from "../types";
 
 import {
@@ -53,7 +52,7 @@ export const getPeople = (nextPage?: string) => async (dispatch: Dispatch) => {
     if (nextPage) {
       const { data }: FetchPeople = await peopleServices.fetchNextPeople(nextPage);
 
-      dispatch({ type: FETCH_ALL_PLANETS, payload: data });
+      dispatch({ type: FETCH_ALL_PEOPLE, payload: data });
     } else {
       const { data }: FetchPeople = await peopleServices.fetchPeople();
 
@@ -64,17 +63,9 @@ export const getPeople = (nextPage?: string) => async (dispatch: Dispatch) => {
   }
 };
 
-export const setNewQuery = (query: string) => async (dispatch: Dispatch) => {
+export const setCurrentTitle = (title: string | null) => async (dispatch: Dispatch) => {
   try {
-    dispatch({ type: NEW_QUERY, payload: query });
-  } catch (error) {
-    console.log((error as Error).message);
-  }
-};
-
-export const toggleDisplay = (display: string) => async (dispatch: Dispatch) => {
-  try {
-    dispatch({ type: TOGGLE_DISPLAY, payload: display });
+    dispatch({ type: NEW_TITLE, payload: title });
   } catch (error) {
     console.log((error as Error).message);
   }

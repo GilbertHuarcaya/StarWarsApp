@@ -1,30 +1,24 @@
 /* eslint-disable default-param-last */
 
 import {
-  NEW_QUERY, TOGGLE_DISPLAY,
+  NEW_TITLE,
 } from "../types";
 
 const initialState = {
-  query: "",
-  toggleDisplay: "dashboard",
+  currentTitle: null,
 };
 
 type ActionReducer = {
-      type: "NEW_QUERY" | "TOGGLE_DISPLAY";
+      type: "NEW_TITLE";
       payload: string;
     }
 
 export default (state = initialState, action: ActionReducer) => {
   switch (action.type) {
-    case NEW_QUERY:
+    case NEW_TITLE:
       return {
         ...state,
         query: action.payload,
-      };
-    case TOGGLE_DISPLAY:
-      return {
-        ...state,
-        toggleTasksDisplay: action.payload,
       };
     default:
       return state;
