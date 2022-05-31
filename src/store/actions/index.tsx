@@ -4,7 +4,7 @@ import {
   FETCH_ALL_PLANETS,
   FETCH_ALL_PEOPLE,
   FETCH_ALL_STARSHIPS,
-  NEW_TITLE,
+  NEW_TITLE, LOADING,
 } from "../types";
 
 import {
@@ -17,6 +17,7 @@ import { FetchStarships, FetchPlanets, FetchPeople } from "../../config/interfac
 
 export const getStarships = (nextPage?: string) => async (dispatch: Dispatch) => {
   try {
+    dispatch({ type: LOADING, payload: true });
     if (nextPage) {
       const { data }: FetchStarships = await starshipsServices.fetchNextStarships(nextPage);
 
@@ -26,6 +27,7 @@ export const getStarships = (nextPage?: string) => async (dispatch: Dispatch) =>
 
       dispatch({ type: FETCH_ALL_STARSHIPS, payload: data });
     }
+    dispatch({ type: LOADING, payload: false });
   } catch (error) {
     console.log((error as Error).message);
   }
@@ -33,6 +35,7 @@ export const getStarships = (nextPage?: string) => async (dispatch: Dispatch) =>
 
 export const getPlanets = (nextPage?: string) => async (dispatch: Dispatch) => {
   try {
+    dispatch({ type: LOADING, payload: true });
     if (nextPage) {
       const { data }: FetchPlanets = await planetsServices.fetchNextPlanets(nextPage);
 
@@ -42,6 +45,7 @@ export const getPlanets = (nextPage?: string) => async (dispatch: Dispatch) => {
 
       dispatch({ type: FETCH_ALL_PLANETS, payload: data });
     }
+    dispatch({ type: LOADING, payload: false });
   } catch (error) {
     console.log((error as Error).message);
   }
@@ -49,6 +53,7 @@ export const getPlanets = (nextPage?: string) => async (dispatch: Dispatch) => {
 
 export const getPeople = (nextPage?: string) => async (dispatch: Dispatch) => {
   try {
+    dispatch({ type: LOADING, payload: true });
     if (nextPage) {
       const { data }: FetchPeople = await peopleServices.fetchNextPeople(nextPage);
 
@@ -58,6 +63,7 @@ export const getPeople = (nextPage?: string) => async (dispatch: Dispatch) => {
 
       dispatch({ type: FETCH_ALL_PEOPLE, payload: data });
     }
+    dispatch({ type: LOADING, payload: false });
   } catch (error) {
     console.log((error as Error).message);
   }

@@ -17,5 +17,5 @@ export const DELETE_PERSON = "DELETE_PERSON";
 export const FETCH_ALL_PEOPLE = "FETCH_ALL_PEOPLE";
 
 // ActionTypes APP
-export const TOGGLE_DISPLAY = "TOGGLE_DISPLAY";
+export const LOADING = "LOADING";
 export const NEW_TITLE = "NEW_TITLE";

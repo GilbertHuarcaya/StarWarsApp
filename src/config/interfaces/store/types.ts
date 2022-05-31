@@ -4,6 +4,7 @@ import { Person } from "../people/types";
 
 interface AppStore {
   currentTitle: string;
+  loading: boolean;
 }
 
 export interface FetchPeople {

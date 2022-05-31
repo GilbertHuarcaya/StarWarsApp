@@ -1,7 +1,7 @@
 export interface Person {
   name: string,
-  height: number,
-  mass: number,
+  height: string,
+  mass: string,
   hair_color: string,
   skin_color: string,
   eye_color: string,
@@ -9,7 +9,7 @@ export interface Person {
   gender: string,
   homeworld: string,
   films: string[],
-  species: [],
+  species: string[],
   vehicles: string[],
   starships: string[],
   created: string,
