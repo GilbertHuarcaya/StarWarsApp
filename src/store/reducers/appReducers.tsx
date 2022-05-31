@@ -2,7 +2,7 @@
 
 import {
   NEW_QUERY, TOGGLE_DISPLAY,
-} from "../types.d";
+} from "../types";
 
 const initialState = {
   query: "",

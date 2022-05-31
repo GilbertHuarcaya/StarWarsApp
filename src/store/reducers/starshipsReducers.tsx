@@ -1,7 +1,7 @@
 /* eslint-disable default-param-last */
 import {
   FETCH_ALL_STARSHIPS,
-} from "../types.d";
+} from "../types";
 
 type ActionReducer = {
   type: "FETCH_ALL_STARSHIPS"

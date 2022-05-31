@@ -6,7 +6,7 @@ import {
   FETCH_ALL_STARSHIPS,
   TOGGLE_DISPLAY,
   NEW_QUERY,
-} from "../types.d";
+} from "../types";
 
 import {
   starshipsServices,
@@ -14,7 +14,7 @@ import {
   peopleServices,
 } from "../../services";
 
-import { FetchStarships, FetchPlanets, FetchPeople } from "../../interfaces/store/types.d";
+import { FetchStarships, FetchPlanets, FetchPeople } from "../../config/interfaces/store/types";
 
 export const getStarships = (nextPage?: string) => async (dispatch: Dispatch) => {
   try {
